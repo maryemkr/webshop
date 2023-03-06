@@ -16,7 +16,7 @@ export class CartService {
   constructor(private _snackBar:MatSnackBar) { }
   addToCart(item: CartItem): void {
     const items = [...this.cart.value.items];
-
+    // vérifie si l'article à ajouter est déjà présent dans le panier d'achat
     const itemInCart = items.find((_item) => _item.id === item.id);
     if (itemInCart) {
       itemInCart.quantity += 1;
